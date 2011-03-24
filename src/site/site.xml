@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright 2010 The sli4j Team
+    Copyright 2010-2011 The 99 Software Foundation
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -14,18 +14,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
-<!--
-    author: Simone Tripodi (simone.tripodi)
-    version: $Id: site.xml 230 2010-06-05 13:31:36Z simone.tripodi $
--->
 <project name="${project.name}">
-
-    <skin>
-        <groupId>com.googlecode.fluido-skin</groupId>
-        <artifactId>fluido-skin</artifactId>
-        <version>1.3</version>
-    </skin>
 
     <bannerLeft>
         <name>Simple Logging Injector for Java</name>
@@ -37,26 +26,12 @@
 
     <body>
         <menu name="${project.name}">
-            <item name="Home" href="index.html"/>
-            <item name="JULI" href="juli.html"/>
-            <item name="Apache Commons Logging" href="acl.html"/>
-            <item name="Apache log4j" href="log4j.html"/>
-            <item name="Simple Logging Facade for Java" href="slf4j.html"/>
-            <item name="Extend sli4j" href="extend.html"/>
-        </menu>
-
-        <menu name="Miscellaneous">
-            <item name="Project stats" href="stats.html"/>
-            <item name="PDF Manual" href="${project.name}-${project.version}.pdf"/>
-        </menu>
-
-        <menu ref="reports"/>
-
-        <menu ref="modules"/>
-
-        <menu name="External Links">
-            <item name="Project Page" href="http://code.google.com/p/sli4j/"/>
-            <item name="Google Guice" href="http://code.google.com/p/google-guice/"/>
+            <item name="Home" href="index.html" />
+            <item name="JULI" href="juli.html" />
+            <item name="Apache Commons Logging" href="acl.html" />
+            <item name="Apache log4j" href="log4j.html" />
+            <item name="Simple Logging Facade for Java" href="slf4j.html" />
+            <item name="Extend sli4j" href="extend.html" />
         </menu>
     </body>
 
