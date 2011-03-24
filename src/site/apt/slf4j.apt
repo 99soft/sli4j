@@ -6,7 +6,7 @@
                                      2009
 
 ~~
-~~   Copyright 2010 The sli4j Team
+~~   Copyright 2010-2011 The 99 Software Foundation
 ~~
 ~~   Licensed under the Apache License, Version 2.0 (the "License");
 ~~   you may not use this file except in compliance with the License.
@@ -20,9 +20,6 @@
 ~~   See the License for the specific language governing permissions and
 ~~   limitations under the License.
 ~~
-
-~~author: Simone Tripodi
-~~version: $Id: slf4j.apt 260 2010-06-09 17:11:34Z simone.tripodi $
 
 Simple Logging Facade for Java (SLF4J)
 
