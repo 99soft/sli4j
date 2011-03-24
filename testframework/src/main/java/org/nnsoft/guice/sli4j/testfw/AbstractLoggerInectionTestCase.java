@@ -15,12 +15,12 @@
  */
 package org.nnsoft.guice.sli4j.testfw;
 
+import static com.google.inject.Guice.createInjector;
+
 import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
 
 import com.google.inject.AbstractModule;
-import com.google.inject.Guice;
 import com.google.inject.Inject;
-import com.google.inject.Injector;
 
 /**
  * 
@@ -35,13 +35,14 @@ public abstract class AbstractLoggerInectionTestCase<L> {
     }
 
     public <LM extends AbstractLoggingModule<L>> void setUp(LM logginModule) {
-        Injector injector = Guice.createInjector(logginModule, new AbstractModule() {
+        createInjector(logginModule, new AbstractModule() {
+
             @Override
             protected void configure() {
                 bind(Service.class).to(ServiceImpl.class).asEagerSingleton();
             }
-        });
-        injector.injectMembers(this);
+
+        }).injectMembers(this);
     }
 
     public void injectAndVerify(L logger) {
