@@ -1,0 +1,84 @@
+                                    ------
+                                    SLF4J
+                                    ------
+                                    Simone Tripodi
+                                    ------
+                                     2009
+
+~~
+~~   Copyright 2010 The sli4j Team
+~~
+~~   Licensed under the Apache License, Version 2.0 (the "License");
+~~   you may not use this file except in compliance with the License.
+~~   You may obtain a copy of the License at
+~~
+~~       http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~   Unless required by applicable law or agreed to in writing, software
+~~   distributed under the License is distributed on an "AS IS" BASIS,
+~~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~~   See the License for the specific language governing permissions and
+~~   limitations under the License.
+~~
+
+~~author: Simone Tripodi
+~~version: $Id: slf4j.apt 260 2010-06-09 17:11:34Z simone.tripodi $
+
+Simple Logging Facade for Java (SLF4J)
+
+  Users that want to use the <SLF4J> package and let <Guice>
+  injects automagically <<<org.slf4j.Logger>>> instances, have to add
+  the following dependency in the <<<pom.xml>>>:
+
+----------------------------------------
+<dependency>
+    <groupId>com.googlecode.sli4j</groupId>
+    <artifactId>sli4j-slf4j</artifactId>
+    <version>XX.XX</version>
+    <scope>compile</scope>
+</dependency>
+----------------------------------------
+
+  then, when creating the <<<com.google.inject.Injector>>>, add the
+  <<<com.googlecode.sli4j.slf4j.Slf4jLoggingModule>>> module; please take note
+  that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
+  for whom the logging injection has to be applied:
+
+----------------------------------------
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
+import com.googlecode.sli4j.slf4j.Slf4jLoggingModule;
+import com.google.inject.matcher.Matchers;
+
+...
+
+Injector injector = Guice.createInjector(new Slf4jLoggingModule(Matchers.any()),
+    ...
+);
+----------------------------------------
+
+  and the magic happens :)
+  
+
+* Direct SLF4J bindings
+
+  The module above uses the <<<org.slf4j.LoggerFactory>>> to create
+  <<<org.slf4j.Logger>>> instances, but <sli4j> comes with native <SLF4J>
+  bindings, resumed in the following table:
+
+*----------+--------------*----------------*----------------*
+|| binding || groupId     || artifactId    || module class  |
+*----------+--------------*----------------*----------------*
+| nop | com.googlecode.sli4j | sli4j-slf4j-nop | com.googlecode.sli4j.slf4j.nop.Slf4jNopLoggingModule |
+*----------+--------------*----------------*----------------*
+| simple | com.googlecode.sli4j | sli4j-slf4j-simple | com.googlecode.sli4j.slf4j.simple.Slf4jSimpleLoggingModule |
+*----------+--------------*----------------*----------------*
+| log4j12 | com.googlecode.sli4j | sli4j-slf4j-log4j | com.googlecode.sli4j.slf4j.log4j.Slf4jLog4jLoggingModule |
+*----------+--------------*----------------*----------------*
+| jdk14 | com.googlecode.sli4j | sli4j-slf4j-jdk14 | com.googlecode.sli4j.slf4j.jdk14.Slf4jJdk14LoggingModule |
+*----------+--------------*----------------*----------------*
+| jcl | com.googlecode.sli4j | sli4j-slf4j-jcl | com.googlecode.sli4j.slf4j.jcl.Slf4jJclLoggingModule |
+*----------+--------------*----------------*----------------*
+| logback | com.googlecode.sli4j | sli4j-slf4j-logback | com.googlecode.sli4j.slf4j.logback.Slf4jLogbackLoggingModule |
+*----------+--------------*----------------*----------------*
