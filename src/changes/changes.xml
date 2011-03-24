@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright 2010 The sli4j Team
+    Copyright 2009-2011 The 99 Software Foundation
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -14,11 +14,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
-<!--
-    author: Simone Tripodi (simone.tripodi)
-    version: $Id: changes.xml 261 2010-06-09 17:14:27Z simone.tripodi $
--->
 <document>
     <properties>
         <author email="simone dot tripodi at gmail dot com">Simone Tripodi</author>
@@ -26,7 +21,16 @@
     </properties>
 
     <body>
-        <release version="2.0" date="2010-06-09" description="First release">
+        <release version="3.0" date="TBD" description="Upgrade release">
+            <action dev="simone.tripodi" type="update">
+                Code moved to GitHub.
+            </action>
+            <action dev="simone.tripodi" type="update">
+                removed custom slf4j modules, slf4j APIs are enough.
+            </action>
+        </release>
+
+        <release version="2.0" date="2010-06-09" description="Major release">
             <action dev="simone.tripodi" type="update">
                 Switched to Sonatype infrastructure.
             </action>
