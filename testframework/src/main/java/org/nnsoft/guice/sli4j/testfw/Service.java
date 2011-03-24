@@ -17,9 +17,6 @@ package org.nnsoft.guice.sli4j.testfw;
 
 /**
  * 
- *
- * @author Simone Tripodi
- * @version $Id: Service.java 236 2010-06-05 14:11:50Z simone.tripodi $
  */
 public interface Service {
 

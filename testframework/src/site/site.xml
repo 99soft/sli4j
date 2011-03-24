@@ -14,18 +14,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
-<!--
-    author: Simone Tripodi (simone.tripodi)
-    version: $Id: site.xml 232 2010-06-05 13:38:12Z simone.tripodi@gmail.com $
--->
 <project name="${project.name}">
-
-    <skin>
-        <groupId>com.googlecode.fluido-skin</groupId>
-        <artifactId>fluido-skin</artifactId>
-        <version>1.3</version>
-    </skin>
 
     <bannerLeft>
         <name>Simple Logging Injector for Java</name>
