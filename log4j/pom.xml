@@ -30,7 +30,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.googlecode.sli4j</groupId>
+            <groupId>${project.parent.groupId}</groupId>
             <artifactId>sli4j-core</artifactId>
             <version>${project.parent.version}</version>
             <scope>compile</scope>
@@ -70,7 +70,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.googlecode.sli4j</groupId>
+            <groupId>${project.parent.groupId}</groupId>
             <artifactId>sli4j-testfw</artifactId>
             <version>${project.parent.version}</version>
             <scope>test</scope>
