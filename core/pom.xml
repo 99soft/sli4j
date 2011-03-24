@@ -25,7 +25,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sli4j-core</artifactId>
     <packaging>jar</packaging>
-    <name>Core</name>
+    <name>99soft :: SLI4J :: Core</name>
     <description>sli4j core</description>
 
     <dependencies>

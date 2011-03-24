@@ -25,7 +25,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sli4j-testfw</artifactId>
     <packaging>jar</packaging>
-    <name>slf4j Test framework</name>
+    <name>99soft :: SLI4J :: Test framework</name>
     <description>Test framework for sli4j modules test</description>
 
     <dependencies>

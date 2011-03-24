@@ -25,7 +25,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sli4j-log4j</artifactId>
     <packaging>jar</packaging>
-    <name>Apache Log4j</name>
+    <name>99soft :: SLI4J :: Apache Log4j</name>
     <description>sli4j apache log4j</description>
 
     <dependencies>

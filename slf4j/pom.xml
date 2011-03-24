@@ -25,7 +25,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sli4j-slf4j</artifactId>
     <packaging>jar</packaging>
-    <name>slf4j-slf4j</name>
+    <name>99soft :: SLI4J :: SLF4J</name>
     <description>sli4j slf4j</description>
 
     <dependencies>
