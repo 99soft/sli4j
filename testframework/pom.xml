@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright 2010 The sli4j Team
+    Copyright 2010-2011 The 99 Software Foundation
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -14,21 +14,15 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
-<!--
-    author: Simone Tripodi (simone.tripodi)
-    version: $Id: pom.xml 264 2010-06-09 17:21:12Z simone.tripodi $
--->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
-        <groupId>com.googlecode.sli4j</groupId>
+        <groupId>org.99soft.guice.sli4j</groupId>
         <artifactId>sli4j-parent</artifactId>
-        <version>2.1-SNAPSHOT</version>
+        <version>3.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.googlecode.sli4j</groupId>
     <artifactId>sli4j-testfw</artifactId>
     <packaging>jar</packaging>
     <name>slf4j Test framework</name>
