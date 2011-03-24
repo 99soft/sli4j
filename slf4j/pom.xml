@@ -28,6 +28,10 @@
     <name>99soft :: SLI4J :: SLF4J</name>
     <description>sli4j slf4j</description>
 
+    <properties>
+        <slf4j.version>1.6.1</slf4j.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.googlecode.sli4j</groupId>
@@ -39,7 +43,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.6.1</version>
+            <version>${slf4j.version}</version>
             <scope>compile</scope>
         </dependency>
 
