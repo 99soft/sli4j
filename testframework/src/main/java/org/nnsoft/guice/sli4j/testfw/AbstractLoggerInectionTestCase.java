@@ -1,5 +1,5 @@
 /*
- *    Copyright 2010 The sli4j Team
+ *    Copyright 2010-2011 The 99 Software Foundation
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,19 +13,17 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.testfw;
+package org.nnsoft.guice.sli4j.testfw;
+
+import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
-import com.googlecode.sli4j.core.AbstractLoggingModule;
 
 /**
  * 
- *
- * @author Simone Tripodi
- * @version $Id: AbstractLoggerInectionTestCase.java 236 2010-06-05 14:11:50Z simone.tripodi $
  */
 public abstract class AbstractLoggerInectionTestCase<L> {
 

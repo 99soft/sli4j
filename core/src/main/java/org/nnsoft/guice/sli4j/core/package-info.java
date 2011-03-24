@@ -1,5 +1,5 @@
 /*
- *    Copyright 2010 The sli4j Team
+ *    Copyright 2010-2011 The 99 Software Foundation
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,16 +13,8 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.testfw;
 
 /**
- * 
- *
- * @author Simone Tripodi
- * @version $Id: Service.java 236 2010-06-05 14:11:50Z simone.tripodi $
+ * Core classes definition and shared stuff.
  */
-public interface Service {
-
-    void go();
-
-}
+package org.nnsoft.guice.sli4j.core;

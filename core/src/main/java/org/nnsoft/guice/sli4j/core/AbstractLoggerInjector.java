@@ -1,5 +1,5 @@
 /*
- *    Copyright 2010 The sli4j Team
+ *    Copyright 2010-2011 The 99 Software Foundation
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.core;
+package org.nnsoft.guice.sli4j.core;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -23,9 +23,6 @@ import com.google.inject.MembersInjector;
 /**
  * The abstract Logger injector implementation, takes care of injecting the
  * concrete Logger implementation to the logged filed.
- *
- * @author Simone Tripodi
- * @version $Id: AbstractLoggerInjector.java 233 2010-06-05 14:06:59Z simone.tripodi $
  */
 public abstract class AbstractLoggerInjector<L> implements MembersInjector<L> {
 
