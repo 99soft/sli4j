@@ -27,21 +27,21 @@ Apache Commons Logging
   injects automagically <<<org.apache.commons.logging.Log>>> instances, have to add
   the following dependency in the <<<pom.xml>>>:
 
-----------------------------------------
++--------------------------------------+
 <dependency>
     <groupId>com.googlecode.sli4j</groupId>
     <artifactId>sli4j-acl</artifactId>
     <version>XX.XX</version>
     <scope>compile</scope>
 </dependency>
-----------------------------------------
++--------------------------------------+
 
   then, when creating the <<<com.google.inject.Injector>>>, add the
   <<<com.googlecode.sli4j.acl.ACLLoggingModule>>> module; please take note
   that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
   for whom the logging injection has to be applied:
 
-----------------------------------------
++--------------------------------------+
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -53,6 +53,6 @@ import com.google.inject.matcher.Matchers;
 Injector injector = Guice.createInjector(new ACLLoggingModule(Matchers.any()),
     ...
 );
-----------------------------------------
++--------------------------------------+
 
   and the magic happens :)

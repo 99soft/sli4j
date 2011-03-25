@@ -33,28 +33,27 @@ Introduction
 
   * Apache {{{http://logging.apache.org/log4j/}log4j}};
 
-  * Simple Logging Facade for Java {{{http://www.slf4j.org/}slf4j}}, with
-    {{{http://logback.qos.ch/}Logback}} support.
+  * Simple Logging Facade for Java {{{http://www.slf4j.org/}slf4j}}.
 
   The concept behind <<sli4j>> is that instead of creating Loggers by hand,
   users can let <Guice> creates and injects them automagically, for example
   instead writing:
 
-----------------------------------------
++--------------------------------------+
 import java.util.logging.Logger;
 ...
 Logger logger = Logger.getLogger(this.getClass().getName());
 ...
-----------------------------------------
++--------------------------------------+
 
   users can easily code:
 
-----------------------------------------
++--------------------------------------+
 import java.util.logging.Logger;
 ...
 Logger logger;
 ...
-----------------------------------------
++--------------------------------------+
 
   and <<nothing>> more! <<No>> setter methods are needed, <<no>> special annotations,
   just declare it and let <sli4j> doing the rest, <<<final>>> and already set

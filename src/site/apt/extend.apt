@@ -27,20 +27,20 @@ Extend sli4j
 
   [[1]] add the <<<core>>> dependency in the <<<pom.xml>>>:
 
-----------------------------------------
++--------------------------------------+
 <dependency>
     <groupId>com.googlecode.sli4j</groupId>
     <artifactId>sli4j-core</artifactId>
     <version>XX.XX</version>
     <scope>compile</scope>
 </dependency>
-----------------------------------------
++--------------------------------------+
 
   [[2]] Extend the <<<com.googlecode.sli4j.core.AbstractLoggerInjector>>>,
         that's the class responsibile of creating and injecting the desired
         Logger, specifying the Logger type:
 
-----------------------------------------
++--------------------------------------+
 import java.lang.reflect.Field;
 
 import com.acme.MyLogger;
@@ -60,13 +60,13 @@ public final class AcmeLoggerInjector extends AbstractLoggerInjector<MyLogger> {
     }
 
 }
-----------------------------------------
++--------------------------------------+
 
   [[3]] Extend the <<<com.googlecode.sli4j.core.AbstractLoggingModule>>>,
         specifying the Logger type and the
         <<<com.googlecode.sli4j.core.AbstractLoggerInjector>>> type:
 
-----------------------------------------
++--------------------------------------+
 import com.acme.MyLogger;
 
 import com.googlecode.sli4j.core.AbstractLoggingModule;
@@ -80,6 +80,6 @@ public final class AcmeLoggingModule extends AbstractLoggingModule<MyLogger> {
     }
 
 }
-----------------------------------------
++--------------------------------------+
 
   [[4]] Plug your new logging module and enjoy ;)
