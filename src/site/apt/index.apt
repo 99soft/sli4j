@@ -51,12 +51,13 @@ Logger logger = Logger.getLogger(this.getClass().getName());
 +--------------------------------------+
 import java.util.logging.Logger;
 ...
+@InjectLogger
 Logger logger;
 ...
 +--------------------------------------+
 
-  and <<nothing>> more! <<No>> setter methods are needed, <<no>> special annotations,
-  just declare it and let <sli4j> doing the rest, <<<final>>> and already set
+  and <<nothing>> more! <<No>> setter methods are needed, just declare it, annotate with <<<@InjectLogger>>>
+  annotation let <sli4j> doing the rest, <<<final>>> and already set
   Loggers will be skipped and <sli4j> won't try to override them at all.
 
 Acknowledgements
