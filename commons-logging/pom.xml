@@ -20,6 +20,7 @@
         <groupId>org.99soft.guice.sli4j</groupId>
         <artifactId>sli4j-parent</artifactId>
         <version>3.0-SNAPSHOT</version>
+        <relativePath>../</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
