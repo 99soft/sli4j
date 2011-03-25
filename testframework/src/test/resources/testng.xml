@@ -15,11 +15,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
-<!--
-    author: Simone Tripodi (simone.tripodi)
-    version: $Id: testng.xml 61 2010-02-05 07:59:12Z simone.tripodi $
--->
 <suite name="sli4j-testframework">
 
 </suite>
