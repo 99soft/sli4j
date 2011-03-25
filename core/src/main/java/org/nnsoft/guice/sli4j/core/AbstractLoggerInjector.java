@@ -15,10 +15,13 @@
  */
 package org.nnsoft.guice.sli4j.core;
 
+import static java.lang.String.format;
+import static java.lang.reflect.Modifier.isFinal;
+
 import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 
 import com.google.inject.MembersInjector;
+import com.google.inject.ProvisionException;
 
 /**
  * The abstract Logger injector implementation, takes care of injecting the
@@ -44,7 +47,7 @@ public abstract class AbstractLoggerInjector<L> implements MembersInjector<L> {
      * {@inheritDoc}
      */
     public final void injectMembers(Object target) {
-        if (Modifier.isFinal(this.field.getModifiers())) {
+        if (isFinal(this.field.getModifiers())) {
             return;
         }
 
@@ -55,9 +58,9 @@ public abstract class AbstractLoggerInjector<L> implements MembersInjector<L> {
                 this.field.set(target, this.createLogger(this.field.getType()));
             }
         } catch (Exception e) {
-            throw new RuntimeException("Impossible to set logger to field '"
-                    + field
-                    + "', see nested exceptions", e);
+            throw new ProvisionException(format("Impossible to set logger for field '%s', see nested exception: %s",
+                    this.field,
+                    e.getMessage()));
         } finally {
             this.field.setAccessible(wasAccessible);
         }
