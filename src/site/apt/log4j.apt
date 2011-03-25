@@ -29,7 +29,7 @@ Apache log4j
 
 +--------------------------------------+
 <dependency>
-    <groupId>com.googlecode.sli4j</groupId>
+    <groupId>org.nnsoft.guice.sli4j</groupId>
     <artifactId>sli4j-log4j</artifactId>
     <version>XX.XX</version>
     <scope>compile</scope>
@@ -37,7 +37,7 @@ Apache log4j
 +--------------------------------------+
 
   then, when creating the <<<com.google.inject.Injector>>>, add the
-  <<<com.googlecode.sli4j.log4j.Log4jLoggingModule>>> module; please take note
+  <<<org.nnsoft.guice.sli4j.log4j.Log4jLoggingModule>>> module; please take note
   that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
   for whom the logging injection has to be applied:
 
@@ -45,7 +45,7 @@ Apache log4j
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import com.googlecode.sli4j.log4j.Log4jLoggingModule;
+import org.nnsoft.guice.sli4j.log4j.Log4jLoggingModule;
 import com.google.inject.matcher.Matchers;
 
 ...

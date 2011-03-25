@@ -29,14 +29,14 @@ Extend sli4j
 
 +--------------------------------------+
 <dependency>
-    <groupId>com.googlecode.sli4j</groupId>
+    <groupId>org.nnsoft.guice.sli4j</groupId>
     <artifactId>sli4j-core</artifactId>
     <version>XX.XX</version>
     <scope>compile</scope>
 </dependency>
 +--------------------------------------+
 
-  [[2]] Extend the <<<com.googlecode.sli4j.core.AbstractLoggerInjector>>>,
+  [[2]] Extend the <<<org.nnsoft.guice.sli4j.core.AbstractLoggerInjector>>>,
         that's the class responsibile of creating and injecting the desired
         Logger, specifying the Logger type:
 
@@ -46,7 +46,7 @@ import java.lang.reflect.Field;
 import com.acme.MyLogger;
 import com.acme.MyLoggerFactory;
 
-import com.googlecode.sli4j.core.AbstractLoggerInjector;
+import org.nnsoft.guice.sli4j.core.AbstractLoggerInjector;
 
 public final class AcmeLoggerInjector extends AbstractLoggerInjector<MyLogger> {
 
@@ -62,14 +62,14 @@ public final class AcmeLoggerInjector extends AbstractLoggerInjector<MyLogger> {
 }
 +--------------------------------------+
 
-  [[3]] Extend the <<<com.googlecode.sli4j.core.AbstractLoggingModule>>>,
+  [[3]] Extend the <<<org.nnsoft.guice.sli4j.core.AbstractLoggingModule>>>,
         specifying the Logger type and the
-        <<<com.googlecode.sli4j.core.AbstractLoggerInjector>>> type:
+        <<<org.nnsoft.guice.sli4j.core.AbstractLoggerInjector>>> type:
 
 +--------------------------------------+
 import com.acme.MyLogger;
 
-import com.googlecode.sli4j.core.AbstractLoggingModule;
+import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matcher;
 
