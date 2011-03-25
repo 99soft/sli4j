@@ -13,22 +13,18 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.slf4j;
+package org.nnsoft.guice.sli4j.slf4j;
 
+import org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase;
 import org.slf4j.Logger;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
-import com.googlecode.sli4j.slf4j.Slf4jLoggingModule;
-import com.googlecode.sli4j.testfw.AbstractLoggerInectionTestCase;
 
 /**
  * 
- *
- * @author Simone Tripodi
- * @version $Id: Slf4jLoggingTestCase.java 243 2010-06-05 14:20:53Z simone.tripodi $
  */
 public final class Slf4jLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
 

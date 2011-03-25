@@ -16,8 +16,5 @@
 
 /**
  * SLF4J injection implementation.
- *
- * @author Marco Speranza
- * @version $Id: package-info.java 1 2010-01-12 22:50:37Z marco.speranza79 $
  */
-package com.googlecode.sli4j.slf4j;
+package org.nnsoft.guice.sli4j.slf4j;

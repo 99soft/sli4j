@@ -13,20 +13,16 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.slf4j;
+package org.nnsoft.guice.sli4j.slf4j;
 
 import java.lang.reflect.Field;
 
+import org.nnsoft.guice.sli4j.core.AbstractLoggerInjector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.googlecode.sli4j.core.AbstractLoggerInjector;
-
 /**
  * {@code SLF4J} logger injector implementation.
- *
- * @author Simone Tripodi
- * @version $Id: Slf4jLoggerInjector.java 243 2010-06-05 14:20:53Z simone.tripodi $
  */
 public final class Slf4jLoggerInjector extends AbstractLoggerInjector<Logger> {
 
