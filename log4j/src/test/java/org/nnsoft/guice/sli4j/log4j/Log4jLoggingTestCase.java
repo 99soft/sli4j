@@ -19,6 +19,7 @@ import static com.google.inject.TypeLiteral.get;
 import static com.google.inject.matcher.Matchers.only;
 
 import org.apache.log4j.Logger;
+import org.nnsoft.guice.sli4j.core.InjectLogger;
 import org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -28,6 +29,7 @@ import org.testng.annotations.Test;
  */
 public final class Log4jLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
 
+    @InjectLogger
     private Logger logger;
 
     @BeforeTest

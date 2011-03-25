@@ -15,6 +15,7 @@
  */
 package org.nnsoft.guice.sli4j.slf4j;
 
+import org.nnsoft.guice.sli4j.core.InjectLogger;
 import org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase;
 import org.slf4j.Logger;
 import org.testng.annotations.BeforeTest;
@@ -28,6 +29,7 @@ import com.google.inject.matcher.Matchers;
  */
 public final class Slf4jLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
 
+    @InjectLogger
     private Logger logger;
 
     @BeforeTest

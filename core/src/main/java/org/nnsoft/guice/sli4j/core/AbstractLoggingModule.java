@@ -15,12 +15,14 @@
  */
 package org.nnsoft.guice.sli4j.core;
 
+import static java.lang.String.format;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
 import com.google.inject.Binder;
 import com.google.inject.MembersInjector;
 import com.google.inject.Module;
+import com.google.inject.ProvisionException;
 import com.google.inject.TypeLiteral;
 import com.google.inject.internal.MoreTypes;
 import com.google.inject.matcher.Matcher;
@@ -75,17 +77,15 @@ public class AbstractLoggingModule<L> extends TypeLiteral<L> implements Module, 
         try {
             this.logInjectorConstructor = loggerInjectorClass.getConstructor(Field.class);
         } catch (SecurityException e) {
-            throw new RuntimeException("Impossible to access to '"
-                    + loggerInjectorClass.getName()
-                    + "("
-                    + Field.class.getName()
-                    + ")' public constructor due to security violation", e);
+            throw new ProvisionException(format("Impossible to access to '%s(%s)' public constructor due to security violation: %s",
+                    loggerInjectorClass.getName(),
+                    Field.class.getName(),
+                    e.getMessage()));
         } catch (NoSuchMethodException e) {
-            throw new RuntimeException("Class '"
-                    + loggerInjectorClass.getName()
-                    + "' doesn't have a public construcor with <"
-                    + Field.class.getName()
-                    + "> parameter type", e);
+            throw new ProvisionException(format("Class '%s' doesn't have a public construcor with <%s> parameter type: %s",
+                    loggerInjectorClass.getName(),
+                    Field.class.getName(),
+                    e.getMessage()));
         }
     }
 
@@ -110,7 +110,8 @@ public class AbstractLoggingModule<L> extends TypeLiteral<L> implements Module, 
         }
 
         for (Field field : klass.getDeclaredFields()) {
-            if (this.loggerClass == field.getType()) {
+            if (this.loggerClass == field.getType()
+                    && field.isAnnotationPresent(InjectLogger.class)) {
                 try {
                     encounter.register((MembersInjector<? super I>) this.logInjectorConstructor.newInstance(field));
                 } catch (Exception e) {

@@ -17,6 +17,7 @@ package org.nnsoft.guice.sli4j.juli;
 
 import java.util.logging.Logger;
 
+import org.nnsoft.guice.sli4j.core.InjectLogger;
 import org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -29,6 +30,7 @@ import com.google.inject.matcher.Matchers;
  */
 public final class JuliLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
 
+    @InjectLogger
     private Logger logger;
 
     @BeforeTest

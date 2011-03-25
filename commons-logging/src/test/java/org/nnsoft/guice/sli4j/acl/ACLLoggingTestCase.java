@@ -16,6 +16,7 @@
 package org.nnsoft.guice.sli4j.acl;
 
 import org.apache.commons.logging.Log;
+import org.nnsoft.guice.sli4j.core.InjectLogger;
 import org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -28,6 +29,7 @@ import com.google.inject.matcher.Matchers;
  */
 public final class ACLLoggingTestCase extends AbstractLoggerInectionTestCase<Log> {
 
+    @InjectLogger
     private Log logger;
 
     @BeforeTest
