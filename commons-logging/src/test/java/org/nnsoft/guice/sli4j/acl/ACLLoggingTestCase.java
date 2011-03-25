@@ -16,8 +16,9 @@
 package org.nnsoft.guice.sli4j.acl;
 
 import org.apache.commons.logging.Log;
-import org.nnsoft.guice.sli4j.acl.ACLLoggingModule;
 import org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
