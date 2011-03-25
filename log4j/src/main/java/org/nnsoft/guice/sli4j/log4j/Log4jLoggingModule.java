@@ -13,19 +13,16 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.log4j;
+package org.nnsoft.guice.sli4j.log4j;
 
 import org.apache.log4j.Logger;
+import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
 
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matcher;
-import com.googlecode.sli4j.core.AbstractLoggingModule;
 
 /**
  * {@code Apache Log4j} logger module implementation.
- *
- * @author Simone Tripodi
- * @version $Id: Log4jLoggingModule.java 241 2010-06-05 14:18:22Z simone.tripodi $
  */
 public final class Log4jLoggingModule extends AbstractLoggingModule<Logger> {
 

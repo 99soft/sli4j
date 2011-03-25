@@ -13,31 +13,26 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.juli;
+package org.nnsoft.guice.sli4j.log4j;
 
-import java.util.logging.Logger;
+import static com.google.inject.TypeLiteral.get;
+import static com.google.inject.matcher.Matchers.only;
 
+import org.apache.log4j.Logger;
+import org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.google.inject.TypeLiteral;
-import com.google.inject.matcher.Matchers;
-import com.googlecode.sli4j.juli.JuliLoggingModule;
-import com.googlecode.sli4j.testfw.AbstractLoggerInectionTestCase;
-
 /**
  * 
- *
- * @author Simone Tripodi
- * @version $Id: JuliLoggingTestCase.java 239 2010-06-05 14:16:18Z simone.tripodi $
  */
-public final class JuliLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
+public final class Log4jLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
 
     private Logger logger;
 
     @BeforeTest
     public void setUp() {
-        super.setUp(new JuliLoggingModule(Matchers.only(TypeLiteral.get(this.getClass()))));
+        super.setUp(new Log4jLoggingModule(only(get(this.getClass()))));
     }
 
     @Test

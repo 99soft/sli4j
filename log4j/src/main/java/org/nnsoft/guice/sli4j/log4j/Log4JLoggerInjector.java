@@ -13,29 +13,24 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.acl;
+package org.nnsoft.guice.sli4j.log4j;
 
 import java.lang.reflect.Field;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.googlecode.sli4j.core.AbstractLoggerInjector;
+import org.apache.log4j.Logger;
+import org.nnsoft.guice.sli4j.core.AbstractLoggerInjector;
 
 /**
- * {@code Apache Commons Logging} logger injector implementation.
- *
- * @author Simone Tripodi
- * @version $Id: ACLLoggerInjector.java 237 2010-06-05 14:13:56Z simone.tripodi $
+ * {@code Apache Log4j} logger injector implementation.
  */
-public final class ACLLoggerInjector extends AbstractLoggerInjector<Log> {
+public final class Log4JLoggerInjector extends AbstractLoggerInjector<Logger> {
 
     /**
-     * Creates a new {@code Apache Commons Logging} Logger injector.
+     * Creates a new {@code Apache Log4j} Logger injector.
      *
      * @param field the logger field has to be injected.
      */
-    public ACLLoggerInjector(Field field) {
+    public Log4JLoggerInjector(Field field) {
         super(field);
     }
 
@@ -43,8 +38,8 @@ public final class ACLLoggerInjector extends AbstractLoggerInjector<Log> {
      * {@inheritDoc}
      */
     @Override
-    protected Log createLogger(Class<?> klass) {
-        return LogFactory.getLog(klass);
+    protected Logger createLogger(Class<?> klass) {
+        return Logger.getLogger(klass);
     }
 
 }

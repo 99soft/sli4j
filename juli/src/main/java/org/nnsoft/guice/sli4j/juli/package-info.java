@@ -15,9 +15,6 @@
  */
 
 /**
- * Apache Commons-Logging injection implementation.
- *
- * @author Marco Speranza
- * @version $Id: package-info.java 237 2010-06-05 14:13:56Z simone.tripodi $
+ * <code>java.util.logging.Logger</code> injection implementation.
  */
-package com.googlecode.sli4j.acl;
+package org.nnsoft.guice.sli4j.juli;

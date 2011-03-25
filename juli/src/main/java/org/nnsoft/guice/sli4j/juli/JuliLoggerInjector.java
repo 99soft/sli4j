@@ -13,18 +13,15 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.juli;
+package org.nnsoft.guice.sli4j.juli;
 
 import java.lang.reflect.Field;
 import java.util.logging.Logger;
 
-import com.googlecode.sli4j.core.AbstractLoggerInjector;
+import org.nnsoft.guice.sli4j.core.AbstractLoggerInjector;
 
 /**
  * {@code java.util.logging.Logger} logger injector implementation.
- *
- * @author Simone Tripodi
- * @version $Id: JuliLoggerInjector.java 239 2010-06-05 14:16:18Z simone.tripodi $
  */
 public final class JuliLoggerInjector extends AbstractLoggerInjector<Logger> {
 

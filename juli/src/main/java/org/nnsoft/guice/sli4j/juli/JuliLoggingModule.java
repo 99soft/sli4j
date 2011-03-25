@@ -13,19 +13,17 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.juli;
+package org.nnsoft.guice.sli4j.juli;
 
 import java.util.logging.Logger;
 
+import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
+
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matcher;
-import com.googlecode.sli4j.core.AbstractLoggingModule;
 
 /**
  * {@code java.util.logging.Logger} logger module implementation.
- *
- * @author Simone Tripodi
- * @version $Id: JuliLoggingModule.java 239 2010-06-05 14:16:18Z simone.tripodi $
  */
 public final class JuliLoggingModule extends AbstractLoggingModule<Logger> {
 

@@ -15,16 +15,11 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
-<!--
-    author: Simone Tripodi (simone.tripodi)
-    version: $Id: testng.xml 241 2010-06-05 14:18:22Z simone.tripodi $
--->
 <suite name="sli4j-log4j">
 
     <test name="log-injection">
         <classes>
-            <class name="com.googlecode.sli4j.log4j.Log4jLoggingTestCase"/>
+            <class name="org.nnsoft.guice.sli4j.log4j.Log4jLoggingTestCase"/>
         </classes>
     </test>
 

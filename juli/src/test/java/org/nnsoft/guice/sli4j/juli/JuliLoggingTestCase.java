@@ -13,30 +13,27 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.acl;
+package org.nnsoft.guice.sli4j.juli;
 
-import org.apache.commons.logging.Log;
+import java.util.logging.Logger;
+
+import org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
-import com.googlecode.sli4j.acl.ACLLoggingModule;
-import com.googlecode.sli4j.testfw.AbstractLoggerInectionTestCase;
 
 /**
  * 
- *
- * @author Simone Tripodi
- * @version $Id: ACLLoggingTestCase.java 237 2010-06-05 14:13:56Z simone.tripodi $
  */
-public final class ACLLoggingTestCase extends AbstractLoggerInectionTestCase<Log> {
+public final class JuliLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
 
-    private Log logger;
+    private Logger logger;
 
     @BeforeTest
     public void setUp() {
-        super.setUp(new ACLLoggingModule(Matchers.only(TypeLiteral.get(this.getClass()))));
+        super.setUp(new JuliLoggingModule(Matchers.only(TypeLiteral.get(this.getClass()))));
     }
 
     @Test

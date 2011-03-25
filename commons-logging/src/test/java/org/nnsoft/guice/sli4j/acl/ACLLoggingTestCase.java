@@ -13,30 +13,25 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.sli4j.log4j;
+package org.nnsoft.guice.sli4j.acl;
 
-import org.apache.log4j.Logger;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.apache.commons.logging.Log;
+import org.nnsoft.guice.sli4j.acl.ACLLoggingModule;
+import org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase;
 
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
-import com.googlecode.sli4j.log4j.Log4jLoggingModule;
-import com.googlecode.sli4j.testfw.AbstractLoggerInectionTestCase;
 
 /**
  * 
- *
- * @author Simone Tripodi
- * @version $Id: Log4jLoggingTestCase.java 241 2010-06-05 14:18:22Z simone.tripodi $
  */
-public final class Log4jLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
+public final class ACLLoggingTestCase extends AbstractLoggerInectionTestCase<Log> {
 
-    private Logger logger;
+    private Log logger;
 
     @BeforeTest
     public void setUp() {
-        super.setUp(new Log4jLoggingModule(Matchers.only(TypeLiteral.get(this.getClass()))));
+        super.setUp(new ACLLoggingModule(Matchers.only(TypeLiteral.get(this.getClass()))));
     }
 
     @Test
