@@ -26,7 +26,7 @@
     <groupId>org.99soft.guice.sli4j</groupId>
     <artifactId>sli4j-parent</artifactId>
     <packaging>pom</packaging>
-    <version>3.0</version>
+    <version>3.1-SNAPSHOT</version>
     <name>99soft :: SLI4J :: Parent</name>
     <description>Simple Logging Injector for Java</description>
     <url>http://99soft.github.com/sli4j</url>
