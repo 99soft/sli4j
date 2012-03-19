@@ -16,6 +16,16 @@
 -->
 <project name="${project.name}">
 
+  <custom>
+    <fluidoSkin>
+      <gitHub>
+        <projectId>99soft/sli4j</projectId>
+        <ribbonOrientation>right</ribbonOrientation>
+        <ribbonColor>red</ribbonColor>
+      </gitHub>
+    </fluidoSkin>
+  </custom>
+
   <bannerLeft>
     <name>Simple Logging Injector for Java</name>
     <src>images/logo.png</src>
