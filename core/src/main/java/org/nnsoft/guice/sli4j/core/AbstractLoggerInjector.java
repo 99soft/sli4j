@@ -52,28 +52,28 @@ public abstract class AbstractLoggerInjector<L>
      */
     public final void injectMembers( Object target )
     {
-        if ( isFinal( this.field.getModifiers() ) )
+        if ( isFinal( field.getModifiers() ) )
         {
             return;
         }
 
-        boolean wasAccessible = this.field.isAccessible();
-        this.field.setAccessible( true );
+        boolean wasAccessible = field.isAccessible();
+        field.setAccessible( true );
         try
         {
-            if ( this.field.get( target ) == null )
+            if ( field.get( target ) == null )
             {
-                this.field.set( target, this.createLogger( this.field.getType() ) );
+                field.set( target, createLogger( field.getType() ) );
             }
         }
         catch ( Exception e )
         {
             throw new ProvisionException( format( "Impossible to set logger for field '%s', see nested exception: %s",
-                                                  this.field, e.getMessage() ) );
+                                                  field, e.getMessage() ) );
         }
         finally
         {
-            this.field.setAccessible( wasAccessible );
+            field.setAccessible( wasAccessible );
         }
     }
 
