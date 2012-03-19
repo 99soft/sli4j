@@ -81,21 +81,19 @@ public class AbstractLoggingModule<L>
         }
 
         this.matcher = matcher;
-        this.loggerClass = MoreTypes.getRawType( this.getType() );
+        loggerClass = MoreTypes.getRawType( getType() );
         try
         {
-            this.logInjectorConstructor = loggerInjectorClass.getConstructor( Field.class );
+            logInjectorConstructor = loggerInjectorClass.getConstructor( Field.class );
         }
         catch ( SecurityException e )
         {
-            throw new ProvisionException(
-                                          format( "Impossible to access to '%s(%s)' public constructor due to security violation: %s",
+            throw new ProvisionException( format( "Impossible to access to '%s(%s)' public constructor due to security violation: %s",
                                                   loggerInjectorClass.getName(), Field.class.getName(), e.getMessage() ) );
         }
         catch ( NoSuchMethodException e )
         {
-            throw new ProvisionException(
-                                          format( "Class '%s' doesn't have a public construcor with <%s> parameter type: %s",
+            throw new ProvisionException( format( "Class '%s' doesn't have a public construcor with <%s> parameter type: %s",
                                                   loggerInjectorClass.getName(), Field.class.getName(), e.getMessage() ) );
         }
     }
@@ -105,7 +103,7 @@ public class AbstractLoggingModule<L>
      */
     public final void configure( Binder binder )
     {
-        binder.bindListener( this.matcher, this );
+        binder.bindListener( matcher, this );
     }
 
     /**
@@ -113,7 +111,7 @@ public class AbstractLoggingModule<L>
      */
     public final <I> void hear( TypeLiteral<I> type, TypeEncounter<I> encounter )
     {
-        this.hear( type.getRawType(), encounter );
+        hear( type.getRawType(), encounter );
     }
 
     @SuppressWarnings("unchecked")
@@ -126,21 +124,22 @@ public class AbstractLoggingModule<L>
 
         for ( Field field : klass.getDeclaredFields() )
         {
-            if ( this.loggerClass == field.getType() && field.isAnnotationPresent( InjectLogger.class ) )
+            if ( loggerClass == field.getType() && field.isAnnotationPresent( InjectLogger.class ) )
             {
                 try
                 {
-                    encounter.register( (MembersInjector<? super I>) this.logInjectorConstructor.newInstance( field ) );
+                    encounter.register( (MembersInjector<? super I>) logInjectorConstructor.newInstance( field ) );
                 }
                 catch ( Exception e )
                 {
-                    throw new RuntimeException( "Impossible to register '" + this.logInjectorConstructor.getName()
-                        + "' for field '" + field + "', see nested exception", e );
+                    throw new RuntimeException( format( "Impossible to register '%s' for field '%s', see nested exception",
+                                                        logInjectorConstructor.getName(),
+                                                        field ), e );
                 }
             }
         }
 
-        this.hear( klass.getSuperclass(), encounter );
+        hear( klass.getSuperclass(), encounter );
     }
 
 }
