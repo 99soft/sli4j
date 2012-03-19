@@ -17,6 +17,7 @@ package org.nnsoft.guice.sli4j.core;
  */
 
 import static java.lang.String.format;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
