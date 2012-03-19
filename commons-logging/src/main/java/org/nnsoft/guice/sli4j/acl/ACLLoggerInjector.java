@@ -1,3 +1,5 @@
+package org.nnsoft.guice.sli4j.acl;
+
 /*
  *    Copyright 2010-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.guice.sli4j.acl;
 
 import java.lang.reflect.Field;
 
@@ -24,23 +25,27 @@ import org.nnsoft.guice.sli4j.core.AbstractLoggerInjector;
 /**
  * {@code Apache Commons Logging} logger injector implementation.
  */
-public final class ACLLoggerInjector extends AbstractLoggerInjector<Log> {
+public final class ACLLoggerInjector
+    extends AbstractLoggerInjector<Log>
+{
 
     /**
      * Creates a new {@code Apache Commons Logging} Logger injector.
      *
      * @param field the logger field has to be injected.
      */
-    public ACLLoggerInjector(Field field) {
-        super(field);
+    public ACLLoggerInjector( Field field )
+    {
+        super( field );
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    protected Log createLogger(Class<?> klass) {
-        return LogFactory.getLog(klass);
+    protected Log createLogger( Class<?> klass )
+    {
+        return LogFactory.getLog( klass );
     }
 
 }

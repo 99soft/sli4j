@@ -1,3 +1,5 @@
+package org.nnsoft.guice.sli4j.juli;
+
 /*
  *    Copyright 2010-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.guice.sli4j.juli;
 
 import java.lang.reflect.Field;
 import java.util.logging.Logger;
@@ -30,16 +31,18 @@ public final class JuliLoggerInjector extends AbstractLoggerInjector<Logger> {
      *
      * @param field the logger field has to be injected.
      */
-    public JuliLoggerInjector(Field field) {
-        super(field);
+    public JuliLoggerInjector( Field field )
+    {
+        super( field );
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    protected Logger createLogger(Class<?> klass) {
-        return Logger.getLogger(klass.getName());
+    protected Logger createLogger( Class<?> klass )
+    {
+        return Logger.getLogger( klass.getName() );
     }
 
 }

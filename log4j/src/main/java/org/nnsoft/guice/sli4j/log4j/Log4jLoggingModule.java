@@ -1,3 +1,5 @@
+package org.nnsoft.guice.sli4j.log4j;
+
 /*
  *    Copyright 2010-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.guice.sli4j.log4j;
 
 import org.apache.log4j.Logger;
 import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
@@ -32,8 +33,9 @@ public final class Log4jLoggingModule extends AbstractLoggingModule<Logger> {
      * @param matcher types matcher for whom the Logger injection has to be
      *        performed.
      */
-    public Log4jLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
-        super(matcher, Log4JLoggerInjector.class);
+    public Log4jLoggingModule( Matcher<? super TypeLiteral<?>> matcher )
+    {
+        super( matcher, Log4JLoggerInjector.class );
     }
 
 }

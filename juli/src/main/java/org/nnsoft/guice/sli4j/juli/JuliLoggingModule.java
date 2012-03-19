@@ -1,3 +1,5 @@
+package org.nnsoft.guice.sli4j.juli;
+
 /*
  *    Copyright 2010-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.guice.sli4j.juli;
 
 import java.util.logging.Logger;
 
@@ -33,8 +34,9 @@ public final class JuliLoggingModule extends AbstractLoggingModule<Logger> {
      * @param matcher types matcher for whom the Logger injection has to be
      *        performed.
      */
-    public JuliLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
-        super(matcher, JuliLoggerInjector.class);
+    public JuliLoggingModule( Matcher<? super TypeLiteral<?>> matcher )
+    {
+        super( matcher, JuliLoggerInjector.class );
     }
 
 }

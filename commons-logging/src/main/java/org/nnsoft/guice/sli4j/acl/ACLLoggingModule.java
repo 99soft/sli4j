@@ -1,3 +1,5 @@
+package org.nnsoft.guice.sli4j.acl;
+
 /*
  *    Copyright 2010-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.guice.sli4j.acl;
 
 import org.apache.commons.logging.Log;
 import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
@@ -32,8 +33,9 @@ public final class ACLLoggingModule extends AbstractLoggingModule<Log> {
      * @param matcher types matcher for whom the Logger injection has to be
      *        performed.
      */
-    public ACLLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
-        super(matcher, ACLLoggerInjector.class);
+    public ACLLoggingModule( Matcher<? super TypeLiteral<?>> matcher )
+    {
+        super( matcher, ACLLoggerInjector.class );
     }
 
 }

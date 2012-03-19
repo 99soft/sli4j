@@ -1,3 +1,5 @@
+package org.nnsoft.guice.sli4j.log4j;
+
 /*
  *    Copyright 2010-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.guice.sli4j.log4j;
 
 import static com.google.inject.TypeLiteral.get;
 import static com.google.inject.matcher.Matchers.only;
@@ -25,21 +26,25 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
- * 
+ *
  */
-public final class Log4jLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
+public final class Log4jLoggingTestCase
+    extends AbstractLoggerInectionTestCase<Logger>
+{
 
     @InjectLogger
     private Logger logger;
 
     @BeforeTest
-    public void setUp() {
-        super.setUp(new Log4jLoggingModule(only(get(this.getClass()))));
+    public void setUp()
+    {
+        super.setUp( new Log4jLoggingModule( only( get( this.getClass() ) ) ) );
     }
 
     @Test
-    public void injectAndVerify() {
-        this.injectAndVerify(this.logger);
+    public void injectAndVerify()
+    {
+        this.injectAndVerify( this.logger );
     }
 
 }

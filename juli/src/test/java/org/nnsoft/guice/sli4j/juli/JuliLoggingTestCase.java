@@ -1,3 +1,5 @@
+package org.nnsoft.guice.sli4j.juli;
+
 /*
  *    Copyright 2010-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.guice.sli4j.juli;
 
 import java.util.logging.Logger;
 
@@ -26,7 +27,7 @@ import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
 
 /**
- * 
+ *
  */
 public final class JuliLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
 
@@ -34,13 +35,15 @@ public final class JuliLoggingTestCase extends AbstractLoggerInectionTestCase<Lo
     private Logger logger;
 
     @BeforeTest
-    public void setUp() {
-        super.setUp(new JuliLoggingModule(Matchers.only(TypeLiteral.get(this.getClass()))));
+    public void setUp()
+    {
+        super.setUp( new JuliLoggingModule( Matchers.only( TypeLiteral.get( this.getClass() ) ) ) );
     }
 
     @Test
-    public void injectAndVerify() {
-        this.injectAndVerify(this.logger);
+    public void injectAndVerify()
+    {
+        this.injectAndVerify( this.logger );
     }
 
 }

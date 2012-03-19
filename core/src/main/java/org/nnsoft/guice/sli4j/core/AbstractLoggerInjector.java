@@ -1,3 +1,5 @@
+package org.nnsoft.guice.sli4j.core;
+
 /*
  *    Copyright 2010-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.guice.sli4j.core;
 
 import static java.lang.String.format;
 import static java.lang.reflect.Modifier.isFinal;
@@ -27,7 +28,9 @@ import com.google.inject.ProvisionException;
  * The abstract Logger injector implementation, takes care of injecting the
  * concrete Logger implementation to the logged filed.
  */
-public abstract class AbstractLoggerInjector<L> implements MembersInjector<L> {
+public abstract class AbstractLoggerInjector<L>
+    implements MembersInjector<L>
+{
 
     /**
      * The logger field has to be injected.
@@ -39,30 +42,38 @@ public abstract class AbstractLoggerInjector<L> implements MembersInjector<L> {
      *
      * @param field the logger field has to be injected.
      */
-    public AbstractLoggerInjector(Field field) {
+    public AbstractLoggerInjector( Field field )
+    {
         this.field = field;
     }
 
     /**
      * {@inheritDoc}
      */
-    public final void injectMembers(Object target) {
-        if (isFinal(this.field.getModifiers())) {
+    public final void injectMembers( Object target )
+    {
+        if ( isFinal( this.field.getModifiers() ) )
+        {
             return;
         }
 
         boolean wasAccessible = this.field.isAccessible();
-        this.field.setAccessible(true);
-        try {
-            if (this.field.get(target) == null) {
-                this.field.set(target, this.createLogger(this.field.getType()));
+        this.field.setAccessible( true );
+        try
+        {
+            if ( this.field.get( target ) == null )
+            {
+                this.field.set( target, this.createLogger( this.field.getType() ) );
             }
-        } catch (Exception e) {
-            throw new ProvisionException(format("Impossible to set logger for field '%s', see nested exception: %s",
-                    this.field,
-                    e.getMessage()));
-        } finally {
-            this.field.setAccessible(wasAccessible);
+        }
+        catch ( Exception e )
+        {
+            throw new ProvisionException( format( "Impossible to set logger for field '%s', see nested exception: %s",
+                                                  this.field, e.getMessage() ) );
+        }
+        finally
+        {
+            this.field.setAccessible( wasAccessible );
         }
     }
 

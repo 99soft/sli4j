@@ -1,3 +1,5 @@
+package org.nnsoft.guice.sli4j.slf4j;
+
 /*
  *    Copyright 2010-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.guice.sli4j.slf4j;
 
 import java.lang.reflect.Field;
 
@@ -31,16 +32,18 @@ public final class Slf4jLoggerInjector extends AbstractLoggerInjector<Logger> {
      *
      * @param field the logger field has to be injected.
      */
-    public Slf4jLoggerInjector(Field field) {
-        super(field);
+    public Slf4jLoggerInjector( Field field )
+    {
+        super( field );
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    protected Logger createLogger(Class<?> klass) {
-        return LoggerFactory.getLogger(klass);
+    protected Logger createLogger( Class<?> klass )
+    {
+        return LoggerFactory.getLogger( klass );
     }
 
 }
