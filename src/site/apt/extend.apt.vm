@@ -29,10 +29,10 @@ Extend sli4j
 
 +--------------------------------------+
 <dependency>
-    <groupId>org.nnsoft.guice.sli4j</groupId>
-    <artifactId>sli4j-core</artifactId>
-    <version>XX.XX</version>
-    <scope>compile</scope>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>sli4j-core</artifactId>
+  <version>${project.version}</version>
+  <scope>compile</scope>
 </dependency>
 +--------------------------------------+
 
@@ -48,15 +48,19 @@ import com.acme.MyLoggerFactory;
 
 import org.nnsoft.guice.sli4j.core.AbstractLoggerInjector;
 
-public final class AcmeLoggerInjector extends AbstractLoggerInjector<MyLogger> {
+public final class AcmeLoggerInjector
+    extends AbstractLoggerInjector<MyLogger>
+{
 
-    public AcmeLoggerInjector(Field field) {
-        super(field);
+    public AcmeLoggerInjector( Field field )
+    {
+        super( field );
     }
 
     @Override
-    protected MyLogger createLogger(Class<?> klass) {
-        return MyLoggerFactory.getLog(klass);
+    protected MyLogger createLogger( Class<?> klass )
+    {
+        return MyLoggerFactory.getLog( klass );
     }
 
 }
@@ -73,9 +77,12 @@ import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matcher;
 
-public final class AcmeLoggingModule extends AbstractLoggingModule<MyLogger> {
+public final class AcmeLoggingModule
+    extends AbstractLoggingModule<MyLogger>
+{
 
-    public ACLLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
+    public ACLLoggingModule( Matcher<? super TypeLiteral<?>> matcher )
+    {
         super(matcher, AcmeLoggerInjector.class);
     }
 

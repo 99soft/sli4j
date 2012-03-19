@@ -29,10 +29,10 @@ Apache Commons Logging
 
 +--------------------------------------+
 <dependency>
-    <groupId>org.nnsoft.guice.sli4j</groupId>
-    <artifactId>sli4j-acl</artifactId>
-    <version>XX.XX</version>
-    <scope>compile</scope>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>sli4j-acl</artifactId>
+  <version>${project.version}</version>
+  <scope>compile</scope>
 </dependency>
 +--------------------------------------+
 
@@ -50,7 +50,7 @@ import com.google.inject.matcher.Matchers;
 
 ...
 
-Injector injector = Guice.createInjector(new ACLLoggingModule(Matchers.any()),
+Injector injector = Guice.createInjector( new ACLLoggingModule( Matchers.any() ),
     ...
 );
 +--------------------------------------+

@@ -42,7 +42,7 @@ Introduction
 +--------------------------------------+
 import java.util.logging.Logger;
 ...
-Logger logger = Logger.getLogger(this.getClass().getName());
+Logger logger = Logger.getLogger( getClass().getName() );
 ...
 +--------------------------------------+
 
@@ -63,7 +63,7 @@ Logger logger;
 Acknowledgements
 
   This work is dedicated to our city, L'Aquila, destroyed by a terrible
-  earthquake the 6th April, 2012... That day more than 300 people were killed
+  earthquake the 6th April, 2009... That day more than 300 people were killed
   because buildings collapsed after a magnitudo 6.3 earthquake at 3:32 am.
 
   We'll never forget that episode.

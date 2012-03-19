@@ -29,10 +29,10 @@ Simple Logging Facade for Java (SLF4J)
 
 +--------------------------------------+
 <dependency>
-    <groupId>org.nnsoft.guice.sli4j</groupId>
-    <artifactId>sli4j-slf4j</artifactId>
-    <version>XX.XX</version>
-    <scope>compile</scope>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>sli4j-slf4j</artifactId>
+  <version>${project.version}</version>
+  <scope>compile</scope>
 </dependency>
 +--------------------------------------+
 
@@ -50,7 +50,7 @@ import com.google.inject.matcher.Matchers;
 
 ...
 
-Injector injector = Guice.createInjector(new Slf4jLoggingModule(Matchers.any()),
+Injector injector = Guice.createInjector( new Slf4jLoggingModule( Matchers.any() ),
     ...
 );
 +--------------------------------------+

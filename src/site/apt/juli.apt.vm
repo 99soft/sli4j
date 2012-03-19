@@ -1,5 +1,5 @@
                                     ------
-                                    Apache log4j
+                                    JULI
                                     ------
                                     Simone Tripodi
                                     ------
@@ -21,23 +21,23 @@
 ~~   limitations under the License.
 ~~
 
-Apache log4j
+JULI - Java Utils Logging
 
-  Users that want to use the <Apache log4j> package and let <Guice>
-  injects automagically <<<org.apache.log4j.Logger>>> instances, have to add
+  Users that want to use the <<<java.util.logging>>> package and let <Guice>
+  injects automagically <<<java.util.logging.Logger>>> instances, have to add
   the following dependency in the <<<pom.xml>>>:
 
 +--------------------------------------+
 <dependency>
-    <groupId>org.nnsoft.guice.sli4j</groupId>
-    <artifactId>sli4j-log4j</artifactId>
-    <version>XX.XX</version>
-    <scope>compile</scope>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>sli4j-juli</artifactId>
+  <version>${project.version}</version>
+  <scope>compile</scope>
 </dependency>
 +--------------------------------------+
 
   then, when creating the <<<com.google.inject.Injector>>>, add the
-  <<<org.nnsoft.guice.sli4j.log4j.Log4jLoggingModule>>> module; please take note
+  <<<org.nnsoft.guice.sli4j.juli.JuliLoggingModule>>> module; please take note
   that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
   for whom the logging injection has to be applied:
 
@@ -45,12 +45,12 @@ Apache log4j
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import org.nnsoft.guice.sli4j.log4j.Log4jLoggingModule;
+import org.nnsoft.guice.sli4j.juli.JuliLoggingModule;
 import com.google.inject.matcher.Matchers;
 
 ...
 
-Injector injector = Guice.createInjector(new Log4jLoggingModule(Matchers.any()),
+Injector injector = Guice.createInjector( new JuliLoggingModule( Matchers.any() ),
     ...
 );
 +--------------------------------------+
