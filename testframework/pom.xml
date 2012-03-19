@@ -15,6 +15,7 @@
   limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.99soft.guice.sli4j</groupId>
@@ -23,9 +24,9 @@
     <relativePath>../</relativePath>
   </parent>
 
-  <modelVersion>4.0.0</modelVersion>
   <artifactId>sli4j-testfw</artifactId>
   <packaging>jar</packaging>
+
   <name>99soft :: SLI4J :: Test framework</name>
   <description>Test framework for sli4j modules test</description>
 
