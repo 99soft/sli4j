@@ -16,6 +16,8 @@ package org.nnsoft.guice.sli4j.juli;
  *    limitations under the License.
  */
 
+import static com.google.inject.matcher.Matchers.any;
+
 import java.util.logging.Logger;
 
 import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
@@ -27,6 +29,16 @@ import com.google.inject.matcher.Matcher;
  * {@code java.util.logging.Logger} logger module implementation.
  */
 public final class JuliLoggingModule extends AbstractLoggingModule<Logger> {
+
+    /**
+     * Creates a new {@code java.util.logging.Logger} injection module that matches any class.
+     *
+     * @since 3.1
+     */
+    public JuliLoggingModule()
+    {
+        super( any(), JuliLoggerInjector.class );
+    }
 
     /**
      * Creates a new {@code java.util.logging.Logger} injection module.

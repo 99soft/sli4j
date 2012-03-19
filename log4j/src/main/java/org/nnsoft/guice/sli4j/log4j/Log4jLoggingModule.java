@@ -16,6 +16,8 @@ package org.nnsoft.guice.sli4j.log4j;
  *    limitations under the License.
  */
 
+import static com.google.inject.matcher.Matchers.any;
+
 import org.apache.log4j.Logger;
 import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
 
@@ -26,6 +28,16 @@ import com.google.inject.matcher.Matcher;
  * {@code Apache Log4j} logger module implementation.
  */
 public final class Log4jLoggingModule extends AbstractLoggingModule<Logger> {
+
+    /**
+     * Creates a new {@code Apache Log4j} injection module that matches any class.
+     *
+     * @since 3.1
+     */
+    public Log4jLoggingModule()
+    {
+        super( any(), Log4JLoggerInjector.class );
+    }
 
     /**
      * Creates a new {@code Apache Log4j} injection module.

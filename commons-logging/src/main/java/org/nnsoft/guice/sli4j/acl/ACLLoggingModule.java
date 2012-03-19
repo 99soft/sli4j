@@ -16,6 +16,8 @@ package org.nnsoft.guice.sli4j.acl;
  *    limitations under the License.
  */
 
+import static com.google.inject.matcher.Matchers.any;
+
 import org.apache.commons.logging.Log;
 import org.nnsoft.guice.sli4j.core.AbstractLoggingModule;
 
@@ -26,6 +28,16 @@ import com.google.inject.matcher.Matcher;
  * {@code Apache Commons Logging} logger module implementation.
  */
 public final class ACLLoggingModule extends AbstractLoggingModule<Log> {
+
+    /**
+     * Creates a new {@code Apache Commons Logging} injection module that matches any class.
+     *
+     * @since 3.1
+     */
+    public ACLLoggingModule()
+    {
+        super( any(), ACLLoggerInjector.class );
+    }
 
     /**
      * Creates a new {@code Apache Commons Logging} injection module.
