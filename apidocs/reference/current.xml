@@ -1,7 +1,7 @@
 <api>
-<package name="org.nnsoft.guice.sli4j.acl"
+<package name="org.nnsoft.guice.sli4j.log4j"
 >
-<class name="ACLLoggerInjector"
+<class name="Log4JLoggerInjector"
  extends="org.nnsoft.guice.sli4j.core.AbstractLoggerInjector"
  abstract="false"
  static="false"
@@ -9,8 +9,8 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<constructor name="ACLLoggerInjector"
- type="org.nnsoft.guice.sli4j.acl.ACLLoggerInjector"
+<constructor name="Log4JLoggerInjector"
+ type="org.nnsoft.guice.sli4j.log4j.Log4JLoggerInjector"
  static="false"
  final="false"
  deprecated="not deprecated"
@@ -20,7 +20,7 @@
 </parameter>
 </constructor>
 <method name="createLogger"
- return="org.apache.commons.logging.Log"
+ return="org.apache.log4j.Logger"
  abstract="false"
  native="false"
  synchronized="false"
@@ -33,7 +33,7 @@
 </parameter>
 </method>
 </class>
-<class name="ACLLoggingModule"
+<class name="Log4jLoggingModule"
  extends="org.nnsoft.guice.sli4j.core.AbstractLoggingModule"
  abstract="false"
  static="false"
@@ -41,16 +41,16 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<constructor name="ACLLoggingModule"
- type="org.nnsoft.guice.sli4j.acl.ACLLoggingModule"
+<constructor name="Log4jLoggingModule"
+ type="org.nnsoft.guice.sli4j.log4j.Log4jLoggingModule"
  static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
 </constructor>
-<constructor name="ACLLoggingModule"
- type="org.nnsoft.guice.sli4j.acl.ACLLoggingModule"
+<constructor name="Log4jLoggingModule"
+ type="org.nnsoft.guice.sli4j.log4j.Log4jLoggingModule"
  static="false"
  final="false"
  deprecated="not deprecated"

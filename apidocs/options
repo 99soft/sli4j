@@ -1,7 +1,7 @@
 -bootclasspath
 '/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar'
 -classpath
-'/Users/simonetripodi/Documents/workspace/sli4j/target/checkout/commons-logging/target/classes:/Users/simonetripodi/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/simonetripodi/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/simonetripodi/.m2/repository/com/google/inject/guice/3.0/guice-3.0.jar:/Users/simonetripodi/Documents/workspace/sli4j/target/checkout/core/target/classes:/Users/simonetripodi/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar'
+'/Users/simonetripodi/Documents/workspace/sli4j/target/checkout/log4j/target/classes:/Users/simonetripodi/.m2/repository/log4j/log4j/1.2.15/log4j-1.2.15.jar:/Users/simonetripodi/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/simonetripodi/.m2/repository/com/google/inject/guice/3.0/guice-3.0.jar:/Users/simonetripodi/Documents/workspace/sli4j/target/checkout/core/target/classes:/Users/simonetripodi/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar'
 -doclet
 'com.google.doclava.Doclava'
 -docletpath
@@ -10,6 +10,6 @@
 'UTF-8'
 -protected
 -sourcepath
-'/Users/simonetripodi/Documents/workspace/sli4j/target/checkout/commons-logging/src/main/java'
--hdf project.name "99soft :: SLI4J :: Apache Commons Logging"
-            -d /Users/simonetripodi/Documents/workspace/sli4j/target/checkout/commons-logging/target/site/apidocs
+'/Users/simonetripodi/Documents/workspace/sli4j/target/checkout/log4j/src/main/java'
+-hdf project.name "99soft :: SLI4J :: Apache Log4j"
+            -d /Users/simonetripodi/Documents/workspace/sli4j/target/checkout/log4j/target/site/apidocs
