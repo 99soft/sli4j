@@ -1,7 +1,7 @@
 <api>
-<package name="org.nnsoft.guice.sli4j.juli"
+<package name="org.nnsoft.guice.sli4j.acl"
 >
-<class name="JuliLoggerInjector"
+<class name="ACLLoggerInjector"
  extends="org.nnsoft.guice.sli4j.core.AbstractLoggerInjector"
  abstract="false"
  static="false"
@@ -9,8 +9,8 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<constructor name="JuliLoggerInjector"
- type="org.nnsoft.guice.sli4j.juli.JuliLoggerInjector"
+<constructor name="ACLLoggerInjector"
+ type="org.nnsoft.guice.sli4j.acl.ACLLoggerInjector"
  static="false"
  final="false"
  deprecated="not deprecated"
@@ -20,7 +20,7 @@
 </parameter>
 </constructor>
 <method name="createLogger"
- return="java.util.logging.Logger"
+ return="org.apache.commons.logging.Log"
  abstract="false"
  native="false"
  synchronized="false"
@@ -33,7 +33,7 @@
 </parameter>
 </method>
 </class>
-<class name="JuliLoggingModule"
+<class name="ACLLoggingModule"
  extends="org.nnsoft.guice.sli4j.core.AbstractLoggingModule"
  abstract="false"
  static="false"
@@ -41,16 +41,16 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<constructor name="JuliLoggingModule"
- type="org.nnsoft.guice.sli4j.juli.JuliLoggingModule"
+<constructor name="ACLLoggingModule"
+ type="org.nnsoft.guice.sli4j.acl.ACLLoggingModule"
  static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
 </constructor>
-<constructor name="JuliLoggingModule"
- type="org.nnsoft.guice.sli4j.juli.JuliLoggingModule"
+<constructor name="ACLLoggingModule"
+ type="org.nnsoft.guice.sli4j.acl.ACLLoggingModule"
  static="false"
  final="false"
  deprecated="not deprecated"
