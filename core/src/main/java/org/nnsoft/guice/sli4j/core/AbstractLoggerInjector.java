@@ -63,7 +63,7 @@ public abstract class AbstractLoggerInjector<L>
         {
             if ( field.get( target ) == null )
             {
-                field.set( target, createLogger( field.getType() ) );
+                field.set( target, createLogger( target.getClass() ) );
             }
         }
         catch ( Exception e )
