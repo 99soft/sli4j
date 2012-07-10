@@ -1,5 +1,5 @@
 var NAVTREE_DATA =
-[ [ "org.nnsoft.guice.sli4j.juli", "org/nnsoft/guice/sli4j/juli/package-summary.html", [ [ "Description", "org/nnsoft/guice/sli4j/juli/package-descr.html", null, "" ], [ "Classes", null, [ [ "JuliLoggerInjector", "org/nnsoft/guice/sli4j/juli/JuliLoggerInjector.html", null, "" ], [ "JuliLoggingModule", "org/nnsoft/guice/sli4j/juli/JuliLoggingModule.html", null, "" ] ]
+[ [ "org.nnsoft.guice.sli4j.acl", "org/nnsoft/guice/sli4j/acl/package-summary.html", [ [ "Description", "org/nnsoft/guice/sli4j/acl/package-descr.html", null, "" ], [ "Classes", null, [ [ "ACLLoggerInjector", "org/nnsoft/guice/sli4j/acl/ACLLoggerInjector.html", null, "" ], [ "ACLLoggingModule", "org/nnsoft/guice/sli4j/acl/ACLLoggingModule.html", null, "" ] ]
 , "" ] ]
 , "" ] ]
 
