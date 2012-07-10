@@ -16,13 +16,13 @@ package org.nnsoft.guice.sli4j.core;
  *    limitations under the License.
  */
 
-import static java.lang.String.format;
-import static java.lang.reflect.Modifier.isFinal;
+import com.google.inject.MembersInjector;
+import com.google.inject.ProvisionException;
 
 import java.lang.reflect.Field;
 
-import com.google.inject.MembersInjector;
-import com.google.inject.ProvisionException;
+import static java.lang.String.format;
+import static java.lang.reflect.Modifier.isFinal;
 
 /**
  * The abstract Logger injector implementation, takes care of injecting the
@@ -45,6 +45,7 @@ public abstract class AbstractLoggerInjector<L>
     public AbstractLoggerInjector( Field field )
     {
         this.field = field;
+        this.field.setAccessible(true);
     }
 
     /**
@@ -57,8 +58,6 @@ public abstract class AbstractLoggerInjector<L>
             return;
         }
 
-        boolean wasAccessible = field.isAccessible();
-        field.setAccessible( true );
         try
         {
             if ( field.get( target ) == null )
@@ -70,10 +69,6 @@ public abstract class AbstractLoggerInjector<L>
         {
             throw new ProvisionException( format( "Impossible to set logger for field '%s', see nested exception: %s",
                                                   field, e.getMessage() ) );
-        }
-        finally
-        {
-            field.setAccessible( wasAccessible );
         }
     }
 
