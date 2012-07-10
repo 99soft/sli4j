@@ -38,6 +38,14 @@
     </license>
   </licenses>
 
+  <contributors>
+    <contributor>
+      <name>Thilo-Alexander Ginkel</name>
+      <email>hilo at ginkel dot com</email>
+      <url>http://blog.ginkel.com/</url>
+    </contributor>
+  </contributors>
+
   <modules>
     <module>core</module>
     <module>testframework</module>
