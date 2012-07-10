@@ -1,16 +1,18 @@
 <api>
-<package name="org.nnsoft.guice.sli4j.slf4j"
+<package name="org.nnsoft.guice.sli4j.core"
 >
-<class name="Slf4jLoggerInjector"
- extends="org.nnsoft.guice.sli4j.core.AbstractLoggerInjector"
- abstract="false"
+<class name="AbstractLoggerInjector"
+ extends="java.lang.Object"
+ abstract="true"
  static="false"
- final="true"
+ final="false"
  deprecated="not deprecated"
  visibility="public"
 >
-<constructor name="Slf4jLoggerInjector"
- type="org.nnsoft.guice.sli4j.slf4j.Slf4jLoggerInjector"
+<implements name="com.google.inject.MembersInjector">
+</implements>
+<constructor name="AbstractLoggerInjector"
+ type="org.nnsoft.guice.sli4j.core.AbstractLoggerInjector"
  static="false"
  final="false"
  deprecated="not deprecated"
@@ -20,8 +22,8 @@
 </parameter>
 </constructor>
 <method name="createLogger"
- return="org.slf4j.Logger"
- abstract="false"
+ return="L"
+ abstract="true"
  native="false"
  synchronized="false"
  static="false"
@@ -32,25 +34,34 @@
 <parameter name="klass" type="java.lang.Class&lt;?&gt;">
 </parameter>
 </method>
-</class>
-<class name="Slf4jLoggingModule"
- extends="org.nnsoft.guice.sli4j.core.AbstractLoggingModule"
+<method name="injectMembers"
+ return="void"
  abstract="false"
+ native="false"
+ synchronized="false"
  static="false"
  final="true"
  deprecated="not deprecated"
  visibility="public"
 >
-<constructor name="Slf4jLoggingModule"
- type="org.nnsoft.guice.sli4j.slf4j.Slf4jLoggingModule"
+<parameter name="target" type="java.lang.Object">
+</parameter>
+</method>
+</class>
+<class name="AbstractLoggingModule"
+ extends="com.google.inject.TypeLiteral"
+ abstract="false"
  static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
-</constructor>
-<constructor name="Slf4jLoggingModule"
- type="org.nnsoft.guice.sli4j.slf4j.Slf4jLoggingModule"
+<implements name="com.google.inject.Module">
+</implements>
+<implements name="com.google.inject.spi.TypeListener">
+</implements>
+<constructor name="AbstractLoggingModule"
+ type="org.nnsoft.guice.sli4j.core.AbstractLoggingModule"
  static="false"
  final="false"
  deprecated="not deprecated"
@@ -58,7 +69,48 @@
 >
 <parameter name="matcher" type="com.google.inject.matcher.Matcher&lt;? super com.google.inject.TypeLiteral&lt;?&gt;&gt;">
 </parameter>
+<parameter name="loggerInjectorClass" type="java.lang.Class&lt;LI&gt;">
+</parameter>
 </constructor>
+<method name="configure"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="binder" type="com.google.inject.Binder">
+</parameter>
+</method>
+<method name="hear"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="com.google.inject.TypeLiteral&lt;I&gt;">
+</parameter>
+<parameter name="encounter" type="com.google.inject.spi.TypeEncounter&lt;I&gt;">
+</parameter>
+</method>
+</class>
+<class name="InjectLogger"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.lang.annotation.Annotation">
+</implements>
 </class>
 </package>
 </api>
