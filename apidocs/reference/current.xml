@@ -1,110 +1,64 @@
 <api>
-<package name="org.nnsoft.guice.sli4j.testfw"
+<package name="org.nnsoft.guice.sli4j.juli"
 >
-<class name="AbstractLoggerInectionTestCase"
- extends="java.lang.Object"
- abstract="true"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<constructor name="AbstractLoggerInectionTestCase"
- type="org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</constructor>
-<method name="injectAndVerify"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="logger" type="L">
-</parameter>
-</method>
-<method name="setService"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="service" type="org.nnsoft.guice.sli4j.testfw.Service">
-</parameter>
-</method>
-<method name="setUp"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="logginModule" type="LM">
-</parameter>
-</method>
-</class>
-<interface name="Service"
- abstract="true"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<method name="go"
- return="void"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-</interface>
-<class name="ServiceImpl"
- extends="java.lang.Object"
+<class name="JuliLoggerInjector"
+ extends="org.nnsoft.guice.sli4j.core.AbstractLoggerInjector"
  abstract="false"
  static="false"
  final="true"
  deprecated="not deprecated"
  visibility="public"
 >
-<implements name="org.nnsoft.guice.sli4j.testfw.Service">
-</implements>
-<constructor name="ServiceImpl"
- type="org.nnsoft.guice.sli4j.testfw.ServiceImpl"
+<constructor name="JuliLoggerInjector"
+ type="org.nnsoft.guice.sli4j.juli.JuliLoggerInjector"
  static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="field" type="java.lang.reflect.Field">
+</parameter>
 </constructor>
-<method name="go"
- return="void"
+<method name="createLogger"
+ return="java.util.logging.Logger"
  abstract="false"
  native="false"
  synchronized="false"
  static="false"
  final="false"
  deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="klass" type="java.lang.Class&lt;?&gt;">
+</parameter>
+</method>
+</class>
+<class name="JuliLoggingModule"
+ extends="org.nnsoft.guice.sli4j.core.AbstractLoggingModule"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
  visibility="public"
 >
-</method>
+<constructor name="JuliLoggingModule"
+ type="org.nnsoft.guice.sli4j.juli.JuliLoggingModule"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="JuliLoggingModule"
+ type="org.nnsoft.guice.sli4j.juli.JuliLoggingModule"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="matcher" type="com.google.inject.matcher.Matcher&lt;? super com.google.inject.TypeLiteral&lt;?&gt;&gt;">
+</parameter>
+</constructor>
 </class>
 </package>
 </api>
