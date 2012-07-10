@@ -1,7 +1,7 @@
 <api>
-<package name="org.nnsoft.guice.sli4j.core"
+<package name="org.nnsoft.guice.sli4j.testfw"
 >
-<class name="AbstractLoggerInjector"
+<class name="AbstractLoggerInectionTestCase"
  extends="java.lang.Object"
  abstract="true"
  static="false"
@@ -9,108 +9,102 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<implements name="com.google.inject.MembersInjector">
-</implements>
-<constructor name="AbstractLoggerInjector"
- type="org.nnsoft.guice.sli4j.core.AbstractLoggerInjector"
+<constructor name="AbstractLoggerInectionTestCase"
+ type="org.nnsoft.guice.sli4j.testfw.AbstractLoggerInectionTestCase"
  static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="field" type="java.lang.reflect.Field">
-</parameter>
 </constructor>
-<method name="createLogger"
- return="L"
+<method name="injectAndVerify"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="logger" type="L">
+</parameter>
+</method>
+<method name="setService"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="service" type="org.nnsoft.guice.sli4j.testfw.Service">
+</parameter>
+</method>
+<method name="setUp"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="logginModule" type="LM">
+</parameter>
+</method>
+</class>
+<interface name="Service"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="go"
+ return="void"
  abstract="true"
  native="false"
  synchronized="false"
  static="false"
  final="false"
  deprecated="not deprecated"
- visibility="protected"
+ visibility="public"
 >
-<parameter name="klass" type="java.lang.Class&lt;?&gt;">
-</parameter>
 </method>
-<method name="injectMembers"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="target" type="java.lang.Object">
-</parameter>
-</method>
-</class>
-<class name="AbstractLoggingModule"
- extends="com.google.inject.TypeLiteral"
- abstract="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<implements name="com.google.inject.Module">
-</implements>
-<implements name="com.google.inject.spi.TypeListener">
-</implements>
-<constructor name="AbstractLoggingModule"
- type="org.nnsoft.guice.sli4j.core.AbstractLoggingModule"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="matcher" type="com.google.inject.matcher.Matcher&lt;? super com.google.inject.TypeLiteral&lt;?&gt;&gt;">
-</parameter>
-<parameter name="loggerInjectorClass" type="java.lang.Class&lt;LI&gt;">
-</parameter>
-</constructor>
-<method name="configure"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="binder" type="com.google.inject.Binder">
-</parameter>
-</method>
-<method name="hear"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="type" type="com.google.inject.TypeLiteral&lt;I&gt;">
-</parameter>
-<parameter name="encounter" type="com.google.inject.spi.TypeEncounter&lt;I&gt;">
-</parameter>
-</method>
-</class>
-<class name="InjectLogger"
+</interface>
+<class name="ServiceImpl"
  extends="java.lang.Object"
- abstract="true"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.nnsoft.guice.sli4j.testfw.Service">
+</implements>
+<constructor name="ServiceImpl"
+ type="org.nnsoft.guice.sli4j.testfw.ServiceImpl"
  static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
-<implements name="java.lang.annotation.Annotation">
-</implements>
+</constructor>
+<method name="go"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 </class>
 </package>
 </api>
