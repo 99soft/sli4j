@@ -36,12 +36,12 @@
 
   <body>
     <menu name="SLI4J">
-      <item name="Home" href="index.html" />
-      <item name="JULI" href="juli.html" />
-      <item name="Apache Commons Logging" href="acl.html" />
-      <item name="Apache log4j" href="log4j.html" />
-      <item name="Simple Logging Facade for Java" href="slf4j.html" />
-      <item name="Extend sli4j" href="extend.html" />
+      <item name="Home" href="./index.html" />
+      <item name="JULI" href="./juli.html" />
+      <item name="Apache Commons Logging" href="./acl.html" />
+      <item name="Apache log4j" href="./log4j.html" />
+      <item name="Simple Logging Facade for Java" href="./slf4j.html" />
+      <item name="Extend sli4j" href="./extend.html" />
     </menu>
   </body>
 
