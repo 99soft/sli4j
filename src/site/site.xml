@@ -42,6 +42,7 @@
       <item name="Apache log4j" href="./log4j.html" />
       <item name="Simple Logging Facade for Java" href="./slf4j.html" />
       <item name="Extend sli4j" href="./extend.html" />
+      <item name="APIs doc" href="./apidocs/index.html" />
     </menu>
   </body>
 
