@@ -21,7 +21,13 @@
   </properties>
 
   <body>
-    <release version="3.1" date="2012-03-19" description="Maintenance release">
+    <release version="3.2" date="2012-07-13" description="Maintenance release">
+      <action dev="simone.tripodi" type="fix" issue="2" due-to="Thilo-Alexander Ginkel">
+        Fix race condition in AbstractLoggerInjector
+      </action>
+    </release>
+
+    <release version="3.1" date="2012-07-09" description="Maintenance release">
       <action dev="simone.tripodi" type="fix" issue="1" due-to="Thilo-Alexander Ginkel">
         AbstractLoggerInjector#injectMembers uses incorrect class when creating logger.
       </action>
