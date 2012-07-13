@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.99soft</groupId>
     <artifactId>oss-parent</artifactId>
-    <version>9</version>
+    <version>9-SNAPSHOT</version>
   </parent>
 
   <groupId>org.99soft.guice.sli4j</groupId>
@@ -70,6 +70,10 @@
       <url>gitsite:git@github.com/99soft/sli4j.git</url>
     </site>
   </distributionManagement>
+
+  <properties>
+    <javadoc.aggregate>true</javadoc.aggregate>
+  </properties>
 
   <dependencyManagement>
     <dependencies>
